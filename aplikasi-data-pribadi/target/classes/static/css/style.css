@@ -1,0 +1,48 @@
+/* style.css - Tampilan tambahan di luar Bootstrap */
+
+/* Navbar/header di bagian atas */
+.navbar-brand {
+    font-size: 1.4rem;
+}
+
+/* Container form: maksimal lebar 500px, ditengahkan */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Tabel: beri jarak kecil pada konten sel */
+.table td, .table th {
+    vertical-align: middle;
+}
+
+/* Kolom Action: atur agar tombol tidak terlalu lebar */
+.table td:last-child {
+    white-space: nowrap;
+    width: 180px;
+}
+
+/* Tombol action di tabel: beri jarak antar tombol */
+.table .btn {
+    margin: 1px 1px;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+}
+
+/* Card header: tampilan header form */
+.card-header {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Footer padding */
+body {
+    padding-bottom: 40px;
+}
+
+/* Responsive: di layar kecil, kolom alamat disembunyikan */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+}

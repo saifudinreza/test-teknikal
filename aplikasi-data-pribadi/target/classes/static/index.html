@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Data Pribadi Karyawan</title>
+    <!-- Bootstrap 5 CSS: framework tampilan siap pakai dari CDN (Content Delivery Network) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <nav class="navbar navbar-dark bg-primary mb-4">
+        <div class="container">
+            <span class="navbar-brand fw-bold">&#128100;&#128203; Aplikasi Data Pribadi</span>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <!-- ===== FORM PENCARIAN ===== -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <div class="row g-2 align-items-end">
+                    <div class="col-md-3">
+                        <label for="searchNik" class="form-label fw-semibold">NIK</label>
+                        <input type="text" id="searchNik" class="form-control"
+                               placeholder="Cari berdasarkan NIK">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="searchNama" class="form-label fw-semibold">Nama</label>
+                        <input type="text" id="searchNama" class="form-control"
+                               placeholder="Cari berdasarkan Nama">
+                    </div>
+                    <div class="col-md-auto d-flex gap-2">
+                        <button id="btnSearch" class="btn btn-primary">
+                            &#128269; Search
+                        </button>
+                        <a href="tambah.html" class="btn btn-primary">
+                            &#43; Add
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== TABEL DATA KARYAWAN ===== -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover align-middle">
+                <thead class="table-primary text-center">
+                    <tr>
+                        <th>No</th>
+                        <th>NIK</th>
+                        <th>Nama Lengkap</th>
+                        <th>Umur</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Jenis Kelamin</th>
+                        <th class="hide-mobile">Alamat</th>
+                        <th>Negara</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Data diisi oleh monitoring.js secara dinamis menggunakan AJAX -->
+                    <tr>
+                        <td colspan="9" class="text-center text-muted">Memuat data...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div><!-- /container -->
+
+    <!-- ===== MODAL KONFIRMASI HAPUS =====
+         Bootstrap Modal = dialog pop-up yang lebih baik dari confirm() bawaan browser.
+         modal fade = animasi muncul perlahan
+         tabindex="-1" = modal tidak termasuk dalam urutan navigasi keyboard
+    -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="deleteModalLabel">Konfirmasi Hapus</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Teks ini diisi secara dinamis oleh monitoring.js -->
+                    <p id="deleteModalText" class="mb-0"></p>
+                </div>
+                <div class="modal-footer">
+                    <!-- data-bs-dismiss="modal" = tutup modal saat tombol ini diklik -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" id="btnConfirmDelete" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries (letakkan di bawah agar halaman lebih cepat dimuat) -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- File JS kita sendiri -->
+    <script src="js/api.js"></script>
+    <script src="js/monitoring.js"></script>
+
+</body>
+</html>
