@@ -14,6 +14,7 @@ Aplikasi web untuk mengelola data karyawan (tambah, lihat, edit, hapus) yang dib
 6. [Alur Kerja Aplikasi](#6-alur-kerja-aplikasi)
 7. [API Endpoints](#7-api-endpoints)
 8. [Fitur Aplikasi](#8-fitur-aplikasi)
+9. [Tampilan Aplikasi](#9-tampilan-aplikasi)
 
 ---
 
@@ -611,6 +612,45 @@ Saat aplikasi pertama kali dijalankan, 5 data karyawan contoh langsung tersedia 
 3. Bambang Pamungkas — Indonesia
 4. Natasha Romanov — Rusia
 5. Entis Siti Jubaidah — Malaysia
+
+---
+
+---
+
+## 9. Tampilan Aplikasi
+
+### Dashboard — Daftar Karyawan
+Halaman utama yang menampilkan seluruh data karyawan dalam bentuk tabel, lengkap dengan tombol Detail, Edit, dan Hapus di setiap baris.
+
+![Dashboard](../image/dashboard.png)
+
+---
+
+### Pencarian Karyawan
+Fitur pencarian berdasarkan NIK (exact match) atau nama (sebagian kata, tidak case-sensitive).
+
+![Pencarian](../image/search.png)
+
+---
+
+### Form Tambah Karyawan
+Form untuk menginput data karyawan baru. NIK wajib berupa angka dan tidak boleh duplikat.
+
+![Tambah Karyawan](../image/tambah.png)
+
+---
+
+### Form Edit Karyawan
+Form edit dengan data yang sudah terisi otomatis. Field NIK dikunci (readonly) karena berfungsi sebagai Primary Key.
+
+![Edit Karyawan](../image/edit.png)
+
+---
+
+### Detail Karyawan
+Halaman read-only untuk melihat lengkap data satu karyawan, termasuk umur yang dihitung otomatis.
+
+![Detail Karyawan](../image/detail.png)
 
 ---
 
